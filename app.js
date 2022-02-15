@@ -37,7 +37,7 @@ app.get('/api/tasks/:taskId', (req, res) => {
 app.post('/api/tasks', (req, res) => {
   const { error } = utils.validateTask(req.body)
   if (error)
-    return res.status(400).send('The name should be al least 3 chars long')
+    return res.status(400).send('The name should be at least 3 chars long')
   const task = {
     id: tasks.length + 1,
     name: req.body.name,
